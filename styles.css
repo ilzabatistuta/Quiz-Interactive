@@ -1,0 +1,202 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+.quiz-container {
+    max-width: 800px;
+    width: 90%;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #4a4a4a;
+    text-align: center;
+}
+
+#start {
+    text-align: center;
+}
+
+#startBtn, .navigation button, #results button, #leaderboard button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#startBtn:hover, .navigation button:hover, #results button:hover, #leaderboard button:hover {
+    background-color: #5a52d5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#leaderboard button {
+    margin-top: 1rem; /* Menambahkan jarak antara tombol pada leaderboard */
+}
+
+.timer {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.question {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.options {
+    list-style-type: none;
+    padding: 0;
+}
+
+.options li {
+    margin-bottom: 1rem;
+}
+
+.options label {
+    display: block;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.options label:hover {
+    background-color: #e0e0e0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#progress {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin: 0 1rem;
+    overflow: hidden;
+}
+
+#progress::before {
+    content: '';
+    display: block;
+    height: 100%;
+    background-color: #6c63ff;
+    width: var(--progress, 0%);
+    transition: width 0.3s ease;
+}
+
+#results {
+    text-align: center;
+}
+
+#score {
+    font-size: 2rem;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+#resultList {
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.result-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Styling for name entry page */
+#nameEntry {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#nameForm {
+    margin-top: 1rem;
+}
+
+#nameForm input[type="text"] {
+    padding: 12px;
+    width: 300px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#nameForm button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#nameForm button:hover {
+    background-color: #5a52d5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#leaderboard {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#leaderboard table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#leaderboard th, #leaderboard td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#leaderboard th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
+
+#leaderboard td {
+    background-color: #ffffff;
+}
+
+#leaderboard tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}

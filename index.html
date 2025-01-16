@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interaktif</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="start">
+            <h1>Quiz Interaktif</h1>
+            <p>Uji pengetahuan Anda dengan 10 pertanyaan menarik!</p>
+            <button id="startBtn" onclick="startQuiz()">Mulai Quiz</button>
+        </div>
+        <div id="timer" class="timer hidden">
+            <span id="countdown">3</span>
+        </div>
+        <div id="quiz" class="hidden">
+            <!-- Questions will be loaded here -->
+        </div>
+        <div id="nameEntry" class="hidden">
+            <h2>Masukkan Nama Anda</h2>
+            <form id="nameForm" onsubmit="saveName(event)">
+                <input type="text" id="userName" placeholder="Masukkan nama Anda" required>
+                <button type="submit">Simpan</button>
+            </form>
+        </div>
+        <div class="navigation hidden">
+            <button id="prevBtn" onclick="prevQuestion()">Sebelumnya</button>
+            <div id="progress"></div>
+            <button id="nextBtn" onclick="nextQuestion()">Selanjutnya</button>
+        </div>
+        <div id="results" class="hidden">
+            <h2>Hasil Quiz Anda</h2>
+            <div id="score"></div>
+            <ul id="resultList"></ul>
+            <button onclick="showLeaderboard()">Lihat Leaderboard</button>
+            <button onclick="restartQuiz()">Coba Lagi</button>
+        </div>
+        <div id="leaderboard" class="hidden">
+            <h2>Leaderboard Quiz Interaktif</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Peringkat</th>
+                        <th>Nama</th>
+                        <th>Skor</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                    <!-- Leaderboard akan dimuat di sini -->
+                </tbody>
+            </table>
+            <button onclick="restartQuiz()">Main Lagi</button>
+            <button onclick="clearLeaderboard()">Hapus Leaderboard</button>
+        </div>
+    </div>
+    <script>
+        // Example JavaScript function to clear the leaderboard data
+        function clearLeaderboard() {
+            localStorage.removeItem('leaderboard');
+            document.getElementById('leaderboardBody').innerHTML = '';
+            alert('Leaderboard berhasil dihapus!');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
